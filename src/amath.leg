@@ -284,7 +284,7 @@ Op	= "twoheadrightarrowtail"	{ $$ = mk_op("⤖"); }
 	| ("EE" | "exists")		{ $$ = mk_op("∃"); }
 	| "CC"				{ $$ = mk_id("ℂ"); }
 	| ("AA" | "forall")		{ $$ = mk_op("∀"); }
-	| (">=" | "ge" | "gt=" | "geq")	{ $$ = mk_op("≥"); }
+	| (">=" | "geq" | "ge" | "gt=")	{ $$ = mk_op("≥"); }
 	| (">-" | "succ")		{ $$ = mk_op("≻"); }
 	| ("=>" | "implies")		{ $$ = mk_op("⇒"); }
 	| ("<=" | "le")			{ $$ = mk_op("≤"); }
