@@ -272,7 +272,7 @@ Op	=
 	| ("supe" | "supseteq")		{ $$ = mk_op("⊇"); }
 	| ("sup" | "supset")		{ $$ = mk_op("⊃"); }
 	| ("-=" | "equiv")		{ $$ = mk_op("≡"); }
-	| ("~=" | "cong")		{ $$ = mk_op("≌"); }
+	| ("~=" | "cong")		{ $$ = mk_op("≅"); }
 	| ("~~" | "approx")		{ $$ = mk_op("≈"); }
 	| ("prop" | "propto")		{ $$ = mk_op("∝"); }
 	| "nsube"			{ $$ = mk_op("⊈"); }
