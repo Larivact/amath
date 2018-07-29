@@ -10,13 +10,13 @@ while read -r input; do
 	got=$(build/amath <<< "$input")
 	
 	if [ "$got" != "$expected" ]; then
-		echo -e "\e[31m(FAIL)\e[0m $input"
+		echo "input:    $input"
 		echo "expected: $expected"
 		echo "got:      $got"
+		echo
 		exit_status=1
 		failed=$((failed+1))
 	else
-		echo -e "\e[32m(PASS) $input"
 		passed=$((passed+1))
 	fi
 
