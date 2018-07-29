@@ -8,11 +8,8 @@ languages easily, but can certainly be used as a library itself.
 
 AsciiMath is read and the equivalent MathML is printed.
 
-	echo "x^2 + y^2 = z^2" | amath
-
-The default behavior does not output any XML namespace.
-
-* `--xml-ns` print with MathML XML namespace
+	$ echo "x^2" | amath
+	<msup><mi>x</mi><mn>2</mn></msup>
 
 ## Installing
 
