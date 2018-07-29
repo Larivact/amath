@@ -1,2 +1,6 @@
 src/amath.leg.c
 build/
+test/converter
+test/converter.c
+test/official_tests.txt
+test/unittests.js

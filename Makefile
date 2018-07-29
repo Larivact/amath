@@ -2,6 +2,7 @@ CC = gcc
 PREFIX = /usr/local
 BUILD = build
 SRC = src
+TEST = test
 CFLAGS = -Wall -ansi -g -D _GNU_SOURCE -fPIC -O3
 BINARY = $(BUILD)/amath
 LIBRARY = $(BUILD)/libamath.so
@@ -17,21 +18,21 @@ all: $(LIBRARY) $(BINARY)
 test:
 	@bash test/test.sh
 
-test/converter: test/converter.leg
-	leg test/converter.leg -o test/converter.c
-	$(CC) test/converter.c -o test/converter
+$(TEST)/converter: $(TEST)/converter.leg
+	leg test/converter.leg -o $(TEST)/converter.c
+	$(CC) $(TEST)/converter.c -o $(TEST)/converter
 
-test/unittests.js:
-	wget 'https://raw.githubusercontent.com/asciimath/asciimathml/master/test/unittests.js' -O test/unittests.js
+$(TEST)/unittests.js:
+	wget 'https://raw.githubusercontent.com/asciimath/asciimathml/master/test/unittests.js' -O $(TEST)/unittests.js
 
-test/official_tests.txt: test/unittests.js test/converter
-	test/converter < test/unittests.js > test/official_tests.txt
+$(TEST)/official_tests.txt: $(TEST)/unittests.js $(TEST)/converter
+	$(TEST)/converter < $(TEST)/unittests.js > $(TEST)/official_tests.txt
 
-otest: test/official_tests.txt
-	@bash test/official_tests.sh
+otest: $(TEST)/official_tests.txt $(BUILD)/amath
+	@bash $(TEST)/official_tests.sh
 
 memory:
-	@bash test/memory.sh
+	@bash $(TEST)/memory.sh
 
 install: all
 	install -m 0755 $(BINARY) $(PREFIX)/bin
