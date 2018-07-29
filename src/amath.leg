@@ -48,8 +48,8 @@ Simp	= Matrix
 	| < [0-9]+ ('.' [0-9]+)? >	{ $$ = mk_number(yytext); }
 	| Greek
 	| < STD >	{ $$ = mk_op(yytext); }
-	| < SPECIAL >	{ $$ = mk_id(yytext); }
 	| Op
+	| < SPECIAL >	{ $$ = mk_id(yytext); }
 	| < [a-zA-Z] >	{ $$ = mk_id(yytext); }
 
 IntG	= !Right E
