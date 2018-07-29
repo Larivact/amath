@@ -211,7 +211,7 @@ Op	= "twoheadrightarrowtail"	{ $$ = mk_op("⤖"); }
 	| ("rarr" | "rightarrow")	{ $$ = mk_op("→"); }
 	| ("rArr" | "Rightarrow")	{ $$ = mk_op("⇒"); }
 	| "quad"			{ $$ = mk_op("&nbsp;&nbsp;"); }
-	| "prod"			{ $$ = mk_underover("Π"); }
+	| "prod"			{ $$ = mk_underover("∏"); }
 	| "oint"			{ $$ = mk_op("∮"); }
 	| "nsup"			{ $$ = mk_op("⊅"); }
 	| "nsub"			{ $$ = mk_op("⊄"); }
