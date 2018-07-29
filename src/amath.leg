@@ -192,6 +192,7 @@ Op	= "twoheadrightarrowtail"	{ $$ = mk_op("⤖"); }
 	| "Leftrightarrow"		{ $$ = mk_op("⇔"); }
 	| "diamond"			{ $$ = mk_op("⋄"); }
 	| "square"			{ $$ = mk_op("□"); }
+	| ("propto" | "prop")		{ $$ = mk_op("∝"); }
 	| "vdots"			{ $$ = mk_op("⋮"); }
 	| "qquad"			{ $$ = mk_op("&nbsp;&nbsp;&nbsp;&nbsp;"); }
 	| "nsupe"			{ $$ = mk_op("⊉"); }
@@ -209,7 +210,6 @@ Op	= "twoheadrightarrowtail"	{ $$ = mk_op("⤖"); }
 	| ("rarr" | "rightarrow")	{ $$ = mk_op("→"); }
 	| ("rArr" | "Rightarrow")	{ $$ = mk_op("⇒"); }
 	| "quad"			{ $$ = mk_op("&nbsp;&nbsp;"); }
-	| ("prop" | "propto")		{ $$ = mk_op("∝"); }
 	| "prod"			{ $$ = mk_underover("Π"); }
 	| "oint"			{ $$ = mk_op("∮"); }
 	| "nsup"			{ $$ = mk_op("⊅"); }
