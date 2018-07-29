@@ -204,6 +204,8 @@ Op	= "twoheadrightarrowtail"	{ $$ = mk_op("⤖"); }
 	|  ("uarr" | "uparrow")		{ $$ = mk_op("↑"); }
 	| ("supe" | "supseteq")		{ $$ = mk_op("⊇"); }
 	| ("sube" | "subseteq")		{ $$ = mk_op("⊆"); }
+	| ("supset" | "sup")		{ $$ = mk_op("⊃"); }
+	| ("subset" | "sub")		{ $$ = mk_op("⊂"); }
 	| ("rarr" | "rightarrow")	{ $$ = mk_op("→"); }
 	| ("rArr" | "Rightarrow")	{ $$ = mk_op("⇒"); }
 	| "quad"			{ $$ = mk_op("&nbsp;&nbsp;"); }
@@ -228,9 +230,7 @@ Op	= "twoheadrightarrowtail"	{ $$ = mk_op("⤖"); }
 	| ("|--" | "vdash")		{ $$ = mk_op("⊢"); }
 	| ("vvv" | "bigvee")		{ $$ = mk_underover("⋁"); }
 	| ("uuu" | "bigcup")		{ $$ = mk_underover("⋃"); }
-	| ("sup" | "supset")		{ $$ = mk_op("⊃"); }
 	| "sum"				{ $$ = mk_underover("∑"); }
-	| ("sub" | "subset")		{ $$ = mk_op("⊂"); }
 	| "qed"				{ $$ = mk_op("∎"); }
 	| ("not" | "neg")		{ $$ = mk_op("¬"); }
 	| ("nnn" | "bigcap")		{ $$ = mk_underover("⋂"); }
